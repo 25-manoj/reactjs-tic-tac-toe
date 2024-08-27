@@ -1,9 +1,18 @@
+import { useState } from "react"
+
+import Cell from "./Components/Cell"
 
 function App() {
+  const [cells,setCells] = useState(["","","","","","","","",""])
+
   return (
-    <>
-    <h1>hello World</h1>
-    </>
+  <div className="app">
+    <div className="gameboard">
+      {cells.map(cell=>{
+        <Cell cell={cell}/>
+      })}
+    </div>
+  </div>
   )
 }
 
