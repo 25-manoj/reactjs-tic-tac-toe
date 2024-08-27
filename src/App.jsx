@@ -12,7 +12,7 @@ function App() {
     <h1>Tic Tac Toe</h1>
     <div className="gameboard">
       {cells.map((cell,index)=>
-        <Cell cell={cell} key={index} id={index}/>
+        <Cell cell={cell} key={index} id={index} go={go} setGo={setGo}/>
       )}
     </div>
     <p className="info">{winningMessage || message}</p>

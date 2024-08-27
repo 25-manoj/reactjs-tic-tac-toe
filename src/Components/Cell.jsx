@@ -1,6 +1,21 @@
-const Cell = ({id,cell}) =>{
+const Cell = ({id,cell,go,setGo}) =>{
+    function handleClick(e){
+      const taken = e.target.firstChild.classList.contains('circle') || e.target.firstChild.classList.contains('cross')
+      if(!taken){
+        if(go === 'circle'){
+            e.target.firstChild.classList.add('circle')
+            setGo('cross')
+        }
+        if(go === 'cross'){
+            e.target.firstChild.classList.add('cross')
+            setGo('circle')
+        }
+      }
+    }
     return (
-        <div className="square" id={id}>{cell} </div>
+        <div className="square" id={id} onClick={handleClick}>
+            <div>{cell}</div>
+        </div>
     )
 }
 
